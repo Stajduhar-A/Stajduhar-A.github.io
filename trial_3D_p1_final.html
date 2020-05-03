@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Triplet Experiment</title>
+    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.css"></script>
     <script src="jspsych-6/jspsych.js"></script>
     <script src="jspsych-6/plugins/jspsych-external-html.js"></script>
     <script src="jspsych-6/plugins/jspsych-html-button-response.js"></script>
@@ -58,15 +60,16 @@
   const ig = '<img src="example.png" width="450" height="300"></img>'
   var experiment_instructions = {
     type: 'html-keyboard-response',
-    stimulus: '<div><img src="example.png" style="visibility: hidden"></div></img>',
-    prompt:"<p> On each trial of this experiment you will be asked to select the <strong> odd </strong> image out of three images presented."+
+    choices: ['a', 's', 'd'],
+    stimulus: '<div style="visibility: hidden"></div>',
+    prompt:   "<p> On each trial of this experiment you will be asked to select the <strong> odd </strong> image out of three images presented."+
               "<p> An example of this task is, for instance, being asked to select the odd image out of the three for each set below: </p>"
               +ig+
               "<p> There are no right or wrong answers. In some cases, it may be hard to choose which image is the odd one out. </p>"+
               "<p> In other cases, it may be more obvious. It is important that you select the image that appears the most odd out of the three you see. </p>"+
               "<p>To select the odd image, simply press the key corresponding to your choice (either <strong>'f'</strong> , <strong>'g'</strong> or <strong>'h'</strong>).<p>"+
               "<p style='color:red;'>Press any key on your keyboard to begin the experiment.</p>"
-            };
+  };
 
   // survey
   const survey = {

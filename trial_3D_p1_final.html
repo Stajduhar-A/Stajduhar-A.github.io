@@ -54,19 +54,27 @@
 
   // subject instructions
   // MAKE THE INSTRUCTIONS MORE EXPLICIT, tell the participant which keys to use 
-  let sst = '<div <img src="example.png" style="visibility: hidden"></img></div>'
-  const ig = '<img src="example.png" width="450" height="300"></img>'
+  const option_1 = ['f']
+  const option_2 = ['g']
+  const option_3 = ['h']
+  const ig = '<div style="text-align: left; display: inline-block; padding: 10px 60px">'+ option_1 + '</div>' + '<div style="text-align: middle; display: inline-block; padding: 10px 60px">' 
+  + option_2 + '</div>' + '<div style="text-align: right; display: inline-block; padding: 10px 60px">' + option_3 + '</div>' + '<img src="example_edited.png" width="400" height="250"></img>'
+  
+
   var experiment_instructions = {
     type: 'html-keyboard-response',
-    stimulus: '<div style="visibility: hidden"></div>',
-    prompt:   "<p> On each trial of this experiment you will be asked to select the <strong> odd </strong> image out of three images presented."+
-              "<p> An example of this task is, for instance, being asked to select the odd image out of the three for each set below: </p>"
-              +ig+
-              "<p> There are no right or wrong answers. In some cases, it may be hard to choose which image is the odd one out. </p>"+
-              "<p> In other cases, it may be more obvious. It is important that you select the image that appears the most odd out of the three you see. </p>"+
-              "<p>To select the odd image, simply press the key corresponding to your choice (either <strong>'f'</strong> , <strong>'g'</strong> or <strong>'h'</strong>).<p>"+
+    choices: ['a','s','d'],
+    stimulus: '<div style:"visibility: hidden"</div>',
+    prompt:   "<div style='height: 100px; width: 1000px'><p> On each trial of this experiment you will be asked to select the <strong> odd </strong> image out of three images presented."+
+              " An example of this task is, for instance, being asked to select the odd image out of the three for each set below: </p></div>"+ 
+              "<div style='position: relative'><div style='background-color:#D3D3D3; padding-top: 5px; padding-bottom: 5px; text-align:center; vertical-align: middle; display: inline-block; height: 250px; width: 400px'" + 
+              "'>" + ig + "</div></div>"+
+              "<div style='height: 200px; width: 1000px'><p> There are no right or wrong answers. In some cases, it may be hard to choose which image is the odd one out."+
+              " In other cases, it may be more obvious. It is important that you select the image that appears the most odd out of the three you see."+
+              " To select the odd image, simply press the key corresponding to your choice (either <strong>'f'</strong> , <strong>'g'</strong> or <strong>'h'</strong>).</p>"+
               "<p style='color:red;'>Press any key on your keyboard to begin the experiment.</p>"
   };
+
 
   // survey
   const survey = {
